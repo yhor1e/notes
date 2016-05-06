@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">NOTES</string>
+    <string name="title_activity_notes">NOTES</string>
+    <string name="title_activity_note">NOTE</string>
+    <string name="hint_filter">Search</string>
+    <string name="hint_title">title</string>
+    <string name="hint_detail">detail</string>
+    <string name="message_no_note">There is no NOTE.</string>
+    <string name="message_delete_comfirm">Delete Note ( title: %1$s ) ?</string>
+    <string name="message_deleteted">Deleted NOTE ( title: %1$s ) .</string>
+    <string name="message_how_to_delete">If you want to delete, do long click.</string>
+    <string name="label_dialog_title">Comfirm</string>
+    <string name="label_button_yes">Yes</string>
+    <string name="label_button_no">No</string>
+    <string name="create_date_template">created at %1$s</string>
+    <string name="update_date_template">updated at %1$s</string>
+</resources>
