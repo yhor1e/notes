@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -91,7 +93,8 @@ public class NotesActivity extends AppCompatActivity {
     EditText mFilterView = (EditText) findViewById(R.id.notesFilter);
     mFilterView.addTextChangedListener(new TextWatcher() {
       @Override
-      public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+      public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+      }
 
       @Override
       public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -99,7 +102,34 @@ public class NotesActivity extends AppCompatActivity {
       }
 
       @Override
-      public void afterTextChanged(Editable s) {}
+      public void afterTextChanged(Editable s) {
+      }
     });
+  }
+
+  @Override
+  public boolean onCreateOptionsMenu(Menu menu) {
+    getMenuInflater().inflate(R.menu.menu, menu);
+    return true;
+  }
+
+  @Override
+  public boolean onOptionsItemSelected(MenuItem item) {
+
+    int mId = item.getItemId();
+
+    switch (mId) {
+      case R.id.aboutNotes:
+        startActivity(new Intent(this, AboutNotesActivity.class));
+        return true;
+
+      case R.id.usingOSS:
+        startActivity(new Intent(this, UsingOssActivity.class));
+        return true;
+
+      default:
+        return super.onOptionsItemSelected(item);
+
+    }
   }
 }

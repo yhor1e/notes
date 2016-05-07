@@ -24,6 +24,14 @@
             android:name="jp.yhorie.notes.NoteActivity"
             android:label="@string/title_activity_note">
         </activity>
+        <activity
+            android:name="jp.yhorie.notes.AboutNotesActivity"
+            android:label="@string/title_activity_about_notes">
+        </activity>
+        <activity
+            android:name="jp.yhorie.notes.UsingOssActivity"
+            android:label="@string/label_using_oss">
+        </activity>
     </application>
 
 </manifest>

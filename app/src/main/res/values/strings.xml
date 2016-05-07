@@ -2,6 +2,8 @@
     <string name="app_name">NOTES</string>
     <string name="title_activity_notes">NOTES</string>
     <string name="title_activity_note">NOTE</string>
+    <string name="title_activity_about_notes">about NOTES</string>
+    <string name="title_activity_using_oss">using Open Source</string>
     <string name="hint_filter">Search</string>
     <string name="hint_title">title</string>
     <string name="hint_detail">detail</string>
@@ -12,6 +14,31 @@
     <string name="label_dialog_title">Comfirm</string>
     <string name="label_button_yes">Yes</string>
     <string name="label_button_no">No</string>
+    <string name="label_about_notes">about NOTES</string>
+    <string name="label_using_oss">using Open Source</string>
     <string name="create_date_template">created at %1$s</string>
     <string name="update_date_template">updated at %1$s</string>
+    <string name="title_responsibility">免責事項</string>
+    <string name="description_responsibility">
+        本アプリケーション提供者は、本アプリケーションの利用又は利用不能に関連して生じる損害に関して、
+        一切の責任を負いません。
+    </string>
+    <string name="title_device">動作確認済み端末</string>
+    <string name="description_devise">本アプリケーションは AQUOS SH-M01 でのみ動作を確認しています。他の端末では正常に動作しない可能性があります。</string>
+    <string name="title_oss">使用しているオープンソース</string>
+    <string name="description_oss">本アプリケーションでは次のオープンソースを使用しています。</string>
+    <string name="title_dbflow">DBFlow</string>
+    <string name="url_dbflow">https://github.com/Raizlabs/DBFlow</string>
+    <string name="license_dbflow">
+        The MIT License (MIT)\n\nCopyright (c) 2014 Raizlabs\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+    </string>
+    <string name="title_material_icons">Material icons</string>
+    <string name="url_material_icons">https://design.google.com/icons/</string>
+    <string name="license_material_icons">
+        The icons are available under the CC-BY license ( https://creativecommons.org/licenses/by/4.0/ ).</string>
+    <string name="title_icon_generator">Android Asset Studio - Icon Generator - Launcher icons</string>
+    <string name="url_icon_generator">https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html</string>
+    <string name="license_icon_generator">
+        All generated art is licensed under a Creative Commons Attribution 3.0 Unported License ( http://creativecommons.org/licenses/by/3.0/ ). Attribution info ( https://romannurik.github.io/AndroidAssetStudio/attribution.html )
+    </string>
 </resources>
