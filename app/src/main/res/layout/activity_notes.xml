@@ -42,7 +42,7 @@
             android:layout_height="match_parent"
             android:layout_below="@id/notesFilter"
             android:layout_margin="5dp"
-            android:background="#ffffff"
+            android:background="#E8EAF6"
             android:clipToPadding="false"
             android:divider="#f7f7f7"
             android:dividerHeight="5dp"/>
