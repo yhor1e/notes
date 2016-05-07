@@ -45,8 +45,7 @@
             android:background="#ffffff"
             android:clipToPadding="false"
             android:divider="#f7f7f7"
-            android:dividerHeight="5dp"
-            android:padding="5dp"/>
+            android:dividerHeight="5dp"/>
 
         <TextView
             android:id="@+id/emptyList"
