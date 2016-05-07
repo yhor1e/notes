@@ -136,11 +136,13 @@ public class NotesActivity extends AppCompatActivity {
   protected void onActivityResult(int requestCode, int resultCode, Intent data) {
     super.onActivityResult(requestCode, resultCode, data);
 
-    mFlowCursorList.refresh();
-    mNotesListViewAdapter.setData(mFlowCursorList);
+    if (mFlowCursorList != null) {
+      mFlowCursorList.refresh();
+      mNotesListViewAdapter.setData(mFlowCursorList);
 
-    EditText mFilterView = (EditText) findViewById(R.id.notesFilter);
-    String s = mFilterView.getText().toString();
-    mNotesListViewAdapter.getFilter().filter(s);
+      EditText mFilterView = (EditText) findViewById(R.id.notesFilter);
+      String s = mFilterView.getText().toString();
+      mNotesListViewAdapter.getFilter().filter(s);
+    }
   }
 }
