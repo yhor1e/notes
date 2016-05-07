@@ -136,7 +136,7 @@ public class NotesActivity extends AppCompatActivity {
   protected void onActivityResult(int requestCode, int resultCode, Intent data) {
     super.onActivityResult(requestCode, resultCode, data);
 
-    if (mFlowCursorList != null) {
+    if (mFlowCursorList != null || requestCode == 0) {
       mFlowCursorList.refresh();
       mNotesListViewAdapter.setData(mFlowCursorList);
 
