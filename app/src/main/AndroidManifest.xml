@@ -22,14 +22,17 @@
         </activity>
         <activity
             android:name="jp.yhorie.notes.NoteActivity"
+            android:theme="@style/AppTheme.NoActionBar"
             android:label="@string/title_activity_note">
         </activity>
         <activity
             android:name="jp.yhorie.notes.AboutNotesActivity"
+            android:theme="@style/AppTheme.NoActionBar"
             android:label="@string/title_activity_about_notes">
         </activity>
         <activity
             android:name="jp.yhorie.notes.UsingOssActivity"
+            android:theme="@style/AppTheme.NoActionBar"
             android:label="@string/label_using_oss">
         </activity>
     </application>

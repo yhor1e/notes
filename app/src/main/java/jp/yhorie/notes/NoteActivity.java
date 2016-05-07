@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -27,6 +30,11 @@ public class NoteActivity extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_note);
+
+    Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+    setSupportActionBar(toolbar);
+
+    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     Intent mIntent = getIntent();
     mUpdateNoteId = mIntent.getStringExtra("updateNoteId");
@@ -108,5 +116,22 @@ public class NoteActivity extends AppCompatActivity {
         finish();
       }
     });
+  }
+
+  @Override
+  public boolean onOptionsItemSelected(MenuItem item) {
+    int id = item.getItemId();
+
+    boolean result = true;
+
+    switch (id) {
+      case android.R.id.home:
+        finish();
+        break;
+      default:
+        result = super.onOptionsItemSelected(item);
+    }
+
+    return result;
   }
 }
