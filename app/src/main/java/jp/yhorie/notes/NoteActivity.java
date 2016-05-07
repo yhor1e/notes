@@ -80,6 +80,7 @@ public class NoteActivity extends AppCompatActivity {
             .setPositiveButton(getString(R.string.label_button_yes), new DialogInterface.OnClickListener() {
               public void onClick(DialogInterface dialog, int which) {
                 mNote.delete();
+                setResult(RESULT_OK, null);
                 Toast.makeText(NoteActivity.this, getString(R.string.message_deleteted, mNote.getTitle()), Toast.LENGTH_LONG).show();
                 finish();
               }
