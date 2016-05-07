@@ -113,6 +113,8 @@ public class NoteActivity extends AppCompatActivity {
           mNote.setUpdateDate(new Date(System.currentTimeMillis()));
           mNote.update();
         }
+
+        setResult(RESULT_OK, null);
         finish();
       }
     });

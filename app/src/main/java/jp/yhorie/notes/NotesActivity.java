@@ -36,7 +36,7 @@ public class NotesActivity extends AppCompatActivity {
       @Override
       public void onClick(View view) {
         Intent intent = new Intent(getApplicationContext(), NoteActivity.class);
-        startActivity(intent);
+        startActivityForResult(intent, 0);
       }
     });
 
@@ -58,8 +58,7 @@ public class NotesActivity extends AppCompatActivity {
         Note mNote = (Note) parent.getAdapter().getItem(position);
         Intent mIntent = new Intent(getApplicationContext(), NoteActivity.class);
         mIntent.putExtra("updateNoteId", String.valueOf(mNote.getId()));
-        startActivity(mIntent);
-///                startActivityForResult(mIntent, 1);
+        startActivityForResult(mIntent, 1);
       }
 
     });
@@ -131,5 +130,17 @@ public class NotesActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
 
     }
+  }
+
+  @Override
+  protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+
+    mFlowCursorList.refresh();
+    mNotesListViewAdapter.setData(mFlowCursorList);
+
+    EditText mFilterView = (EditText) findViewById(R.id.notesFilter);
+    String s = mFilterView.getText().toString();
+    mNotesListViewAdapter.getFilter().filter(s);
   }
 }
