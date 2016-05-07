@@ -87,7 +87,7 @@ public class NoteActivity extends AppCompatActivity {
             .setNegativeButton(getString(R.string.label_button_no), null)
             .show();
 
-        return true;
+        return false;
       }
     });
 
