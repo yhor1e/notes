@@ -20,7 +20,7 @@
     <string name="update_date_template">updated at %1$s</string>
     <string name="title_responsibility">免責事項</string>
     <string name="description_responsibility">
-        本アプリケーション提供者は、本アプリケーションの利用又は利用不能に関連して生じる損害に関して、
+        本アプリケーション作成・提供者は、本アプリケーションの利用又は利用不能に関連して生じる損害に関して、
         一切の責任を負いません。
     </string>
     <string name="title_device">動作確認済み端末</string>
