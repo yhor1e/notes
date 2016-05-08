@@ -1,4 +1,4 @@
-package com.example.yhorie.template;
+package jp.yhorie.notes;
 
 import android.app.Application;
 
