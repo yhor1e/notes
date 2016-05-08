@@ -4,7 +4,7 @@ This is simple note tool.
 
 ## features
 
-* create
+* create ( available to receive ACTION_SEND intent )
 * update
 * delete
 * search
