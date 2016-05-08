@@ -36,7 +36,6 @@
             android:layout_marginTop="5dp"
             android:background="#E8EAF6"
             android:hint="@string/hint_title"
-            android:lines="1"
             android:padding="10dp"
             android:textAppearance="?android:textAppearanceLarge"/>
 
