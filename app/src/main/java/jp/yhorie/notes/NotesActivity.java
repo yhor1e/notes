@@ -104,6 +104,44 @@ public class NotesActivity extends AppCompatActivity {
       public void afterTextChanged(Editable s) {
       }
     });
+
+    // get ACTION_SEND intent
+    Intent mGetIntent = getIntent();
+    String mAction = mGetIntent.getAction();
+    if (Intent.ACTION_SEND.equals(mAction)) {
+      Bundle extras = mGetIntent.getExtras();
+      if (extras != null) {
+        CharSequence mCharSequenceSubject = extras.getCharSequence(Intent.EXTRA_SUBJECT);
+        CharSequence mCharSequenceText = extras.getCharSequence(Intent.EXTRA_TEXT);
+        if (mCharSequenceText != null) {
+          Intent mIntent = new Intent(getApplicationContext(), NoteActivity.class);
+          mIntent.putExtra("actionSendSubject", String.valueOf(mCharSequenceSubject));
+          mIntent.putExtra("actionSendText", String.valueOf(mCharSequenceText));
+          startActivityForResult(mIntent, 2);
+        }
+      }
+    }
+
+  }
+
+  @Override
+  protected void onNewIntent(Intent intent) {
+    super.onNewIntent(intent);
+
+    String mAction = intent.getAction();
+    if (Intent.ACTION_SEND.equals(mAction)) {
+      Bundle extras = intent.getExtras();
+      if (extras != null) {
+        CharSequence mCharSequenceSubject = extras.getCharSequence(Intent.EXTRA_SUBJECT);
+        CharSequence mCharSequenceText = extras.getCharSequence(Intent.EXTRA_TEXT);
+        if (mCharSequenceText != null) {
+          Intent mIntent = new Intent(getApplicationContext(), NoteActivity.class);
+          mIntent.putExtra("actionSendSubject", String.valueOf(mCharSequenceSubject));
+          mIntent.putExtra("actionSendText", String.valueOf(mCharSequenceText));
+          startActivityForResult(mIntent, 3);
+        }
+      }
+    }
   }
 
   @Override
@@ -136,7 +174,7 @@ public class NotesActivity extends AppCompatActivity {
   protected void onActivityResult(int requestCode, int resultCode, Intent data) {
     super.onActivityResult(requestCode, resultCode, data);
 
-    if(mFlowCursorList == null && requestCode == 0){
+    if(mFlowCursorList == null && (requestCode == 0 || requestCode == 3)){
       try {
         mFlowCursorList = new FlowCursorList<Note>(true, Note.class);
       } catch (IllegalArgumentException e) {

@@ -24,6 +24,8 @@ public class NoteActivity extends AppCompatActivity {
 
   private Note mNote;
   private String mUpdateNoteId = null;
+  private String mActionSendText = null;
+  private String mActionSendSubject = null;
   private SimpleDateFormat mSimpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
   @Override
@@ -31,13 +33,15 @@ public class NoteActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_note);
 
-    Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+    Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
     getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     Intent mIntent = getIntent();
     mUpdateNoteId = mIntent.getStringExtra("updateNoteId");
+    mActionSendText = mIntent.getStringExtra("actionSendText");
+    mActionSendSubject = mIntent.getStringExtra("actionSendSubject");
 
     FloatingActionButton mDeleteButtonView = (FloatingActionButton) findViewById(R.id.noteDeleteButton);
 
@@ -45,6 +49,11 @@ public class NoteActivity extends AppCompatActivity {
       // ready to create
       mDeleteButtonView.setVisibility(View.INVISIBLE);
       mNote = new Note();
+
+      if (mActionSendText != null) {
+        ((EditText) findViewById(R.id.noteDetail)).setText(mActionSendText);
+        ((EditText) findViewById(R.id.noteTitle)).setText(mActionSendSubject);
+      }
     } else {
       // ready to update
       mDeleteButtonView.setVisibility(View.VISIBLE);
