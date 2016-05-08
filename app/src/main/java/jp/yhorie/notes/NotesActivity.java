@@ -136,7 +136,15 @@ public class NotesActivity extends AppCompatActivity {
   protected void onActivityResult(int requestCode, int resultCode, Intent data) {
     super.onActivityResult(requestCode, resultCode, data);
 
-    if (mFlowCursorList != null || requestCode == 0) {
+    if(mFlowCursorList == null && requestCode == 0){
+      try {
+        mFlowCursorList = new FlowCursorList<Note>(true, Note.class);
+      } catch (IllegalArgumentException e) {
+        mFlowCursorList = null;
+      }
+    }
+
+    if (mFlowCursorList != null) {
       mFlowCursorList.refresh();
       mNotesListViewAdapter.setData(mFlowCursorList);
 
