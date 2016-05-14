@@ -18,6 +18,9 @@ import android.widget.ListView;
 
 import com.example.yhorie.template.R;
 import com.raizlabs.android.dbflow.list.FlowCursorList;
+import com.raizlabs.android.dbflow.sql.language.Condition;
+import com.raizlabs.android.dbflow.sql.language.OrderBy;
+import com.raizlabs.android.dbflow.sql.language.Select;
 
 public class NotesActivity extends AppCompatActivity {
 
@@ -42,7 +45,7 @@ public class NotesActivity extends AppCompatActivity {
 
     // fetch data from table
     try {
-      mFlowCursorList = new FlowCursorList<Note>(true, Note.class);
+      mFlowCursorList = new FlowCursorList<Note>(true, new Select().from(Note.class).orderBy(OrderBy.fromProperty(Note_Table.updateDate)));
     } catch (IllegalArgumentException e) {
       mFlowCursorList = null;
     }
@@ -176,7 +179,7 @@ public class NotesActivity extends AppCompatActivity {
 
     if(mFlowCursorList == null && (requestCode == 0 || requestCode == 3)){
       try {
-        mFlowCursorList = new FlowCursorList<Note>(true, Note.class);
+        mFlowCursorList = new FlowCursorList<Note>(true, new Select().from(Note.class).orderBy(OrderBy.fromProperty(Note_Table.updateDate)));
       } catch (IllegalArgumentException e) {
         mFlowCursorList = null;
       }

@@ -116,6 +116,7 @@ public class NoteActivity extends AppCompatActivity {
         if (null == mUpdateNoteId) {
           // create new note
           mNote.setCreateDate(new Date(System.currentTimeMillis()));
+          mNote.setUpdateDate(new Date(System.currentTimeMillis()));
           mNote.save();
 
         } else {
