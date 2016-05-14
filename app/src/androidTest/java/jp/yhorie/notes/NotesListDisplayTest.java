@@ -54,18 +54,18 @@ public class NotesListDisplayTest {
 
   @Test
   public void firstTodoDisplayed() {
-    onView(withText("title:0")).check(matches(isDisplayed()));
+    onView(withText("title:" + String.valueOf(CREATE_ITEMS_SIZE - 1))).check(matches(isDisplayed()));
   }
 
   @Test
   public void lastTodoNotDisplayed() {
-    onView(withText("title:" + String.valueOf(CREATE_ITEMS_SIZE - 1))).check(doesNotExist());
+    onView(withText("title:0")).check(doesNotExist());
   }
 
   @Test
   public void listScrollsAndLastTodoDisplayed() {
     onData(Matchers.instanceOf(Note.class))
         .atPosition(CREATE_ITEMS_SIZE - 1)
-        .check(matches(Matchers.allOf(isDisplayed(), withChild(withText("title:" + String.valueOf(CREATE_ITEMS_SIZE - 1))))));
+        .check(matches(Matchers.allOf(isDisplayed(), withChild(withText("title:0")))));
   }
 }
